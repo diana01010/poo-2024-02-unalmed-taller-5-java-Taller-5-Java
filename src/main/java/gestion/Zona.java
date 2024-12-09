@@ -13,6 +13,7 @@ public class Zona {
         this.nombre = nombre;
         this.zoo = zoo;
         this.animales = new ArrayList<>();
+        this.zoo.agregarZonas(this);  // Aseguramos que la zona se agregue al zoológico
     }
 
     public Zona() {
@@ -21,6 +22,7 @@ public class Zona {
 
     public void agregarAnimales(Animal animal) {
         animales.add(animal);
+        animal.setZona(this);  // Vinculamos el animal con la zona
     }
 
     public int cantidadAnimales() {
